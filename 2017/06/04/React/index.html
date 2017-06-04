@@ -1,0 +1,896 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="React React中有两大核心组件：  react：核心库 (React) react-dom：提供与DOM相关的功能 (ReactDOM)  npm install react react-dom –save-dev  1、JSX和DOM操作//-&amp;gt;在入口中导入CSS,使用WEB-PACK编译部署 require(&amp;apos;./css/index.css&amp;apos;);  //-&amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React基础">
+<meta property="og:url" content="http://yoursite.com/2017/06/04/React/index.html">
+<meta property="og:site_name" content="Liu-10004Blog">
+<meta property="og:description" content="React React中有两大核心组件：  react：核心库 (React) react-dom：提供与DOM相关的功能 (ReactDOM)  npm install react react-dom –save-dev  1、JSX和DOM操作//-&amp;gt;在入口中导入CSS,使用WEB-PACK编译部署 require(&amp;apos;./css/index.css&amp;apos;);  //-&amp;g">
+<meta property="og:updated_time" content="2017-06-04T04:30:08.128Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React基础">
+<meta name="twitter:description" content="React React中有两大核心组件：  react：核心库 (React) react-dom：提供与DOM相关的功能 (ReactDOM)  npm install react react-dom –save-dev  1、JSX和DOM操作//-&amp;gt;在入口中导入CSS,使用WEB-PACK编译部署 require(&amp;apos;./css/index.css&amp;apos;);  //-&amp;g">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/04/React/"/>
+
+
+
+
+
+  <title>React基础 | Liu-10004Blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Liu-10004Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/04/React/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu-10004">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liu-10004Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">React基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-04T12:09:44+08:00">
+                2017-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="React"><a href="#React" class="headerlink" title="React"></a>React</h3><blockquote>
+<p>React中有两大核心组件：</p>
+<ul>
+<li>react：核心库 (React)</li>
+<li>react-dom：提供与DOM相关的功能 (ReactDOM)</li>
+</ul>
+<p>npm install react react-dom –save-dev</p>
+</blockquote>
+<h4 id="1、JSX和DOM操作"><a href="#1、JSX和DOM操作" class="headerlink" title="1、JSX和DOM操作"></a>1、JSX和DOM操作</h4><pre><code>//-&gt;在入口中导入CSS,使用WEB-PACK编译部署
+require(&apos;./css/index.css&apos;);
+
+//-&gt;导入需要的模块(ES6语法)
+import React from &apos;react&apos;;
+import ReactDOM from &apos;react-dom&apos;;
+
+let app = document.getElementById(&apos;app&apos;);
+let styleObj = {color: &apos;red&apos;},
+    personList = [&apos;张三&apos;, &apos;李四&apos;, &apos;王五&apos;];
+
+ReactDOM.render(&lt;h1 style={styleObj} className=&quot;title&quot;&gt;
+    hello world!
+    &lt;ul&gt;
+        {
+            personList.map((item, index)=&gt; {
+                return &lt;li key={index}&gt;{item}&lt;/li&gt;;//-&gt;需要给每一个元素设置唯一标识key，存储的值不相同才可以
+            })
+        }
+    &lt;/ul&gt;
+&lt;/h1&gt;, app);
+</code></pre><blockquote>
+<p>JSX：javascript + xml(html) 它是React独有的语法，我们使用这样的语法创建虚拟的DOM，在最后部署打包的时候，基于babel-loader把ES6-&gt;ES5，把JSX变为HTML</p>
+<ul>
+<li>所有看起来像标签，但不是HTML标签的都是虚拟DOM(React元素)</li>
+<li>所有使用 {…}  包起来的都是JS语法</li>
+<li>设置样式有两种方式：<ul>
+<li>使用行内style来操作  style={styleObj} 我们需要把样式都使用一个变量提前定义</li>
+<li>使用样式类名来操作  className=”title”</li>
+</ul>
+</li>
+</ul>
+<p>当我们执行ReactDOM.render方法的时候，React会按照上面的机制，把虚拟DOM已经我们编写的JS进行解析，然后把结果插入到app容器中，此时原有的虚拟DOM变为了真实的DOM</p>
+</blockquote>
+<h4 id="2、React组件"><a href="#2、React组件" class="headerlink" title="2、React组件"></a>2、React组件</h4><blockquote>
+<p>React的优势就在于组件化的定制，我们可以制定很多的组件，最后一个完整的页面就是由N多个组件组成的，这个也是我们前端工程化开发的意思所在。</p>
+</blockquote>
+<h5 id="定义组件"><a href="#定义组件" class="headerlink" title="定义组件"></a>定义组件</h5><pre><code>/*
+    使用ES6语法定义组件
+
+    1.使用的是ES6中的继承，React.Component就是React的组件类，我们创建的新的组件是Person，我们让其继承React.Component
+
+    2.我们自己的定义的组件名，第一个首字母必须大写(React规定)，而且每一个组件有且只能有一个顶级标签
+
+    3.render是规定的方法，在这个方法中返回我们组件的虚拟DOM即可，而对于constructor以及它的参数，我们后续再介绍
+*/
+class Person extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return &lt;h1 className=&quot;title&quot;&gt;
+            人员名单
+            &lt;ul&gt;
+                {
+                    personList.map((item, index)=&gt; {
+                        return &lt;li key={index}&gt;{item}&lt;/li&gt;;
+                    })
+                }
+            &lt;/ul&gt;
+        &lt;/h1&gt;;
+    }
+}
+
+/*
+    我们使用ReactDOM.render方法可以把自定义的组件增加到页面指定的容器中，这样虚拟DOM就变为了真实的DOM
+*/
+ReactDOM.render(&lt;Person/&gt;, app);
+</code></pre><h5 id="组件的属性"><a href="#组件的属性" class="headerlink" title="组件的属性"></a>组件的属性</h5><blockquote>
+<p>属性是一个组件基础信息，在调取组件的时候，由父级组件指定相关的属性值，然后在子组件中，我们只能获取这些属性值，但是不可以修改这些属性值</p>
+</blockquote>
+<pre><code>class Person extends React.Component {
+    //-&gt;在构造函数中需要把props这个组件的属性进行继承
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        //-&gt;我们可以使用 this.props.xxx 来获取传递进来的属性值
+        return &lt;div&gt;
+            {this.props.name}&lt;br/&gt;
+            {this.props.age}&lt;br/&gt;
+            {this.props.sex}
+        &lt;/div&gt;;
+    }
+}
+
+//-&gt;配置组件属性的默认值或者称之为配置默认属性，在ES5语法中是一个方法：getDefaultProps
+Person.defaultProps = {
+    name: &apos;--&apos;,
+    age: 25,
+    sex: &apos;man&apos;
+};
+
+//-&gt;在插入组件到页面容器中的时候，我们根据需求把要求的属性填写上：name=&quot;张三&quot; age=&quot;30&quot; ... 不填写的按照默认值defaultProps处理即可
+ReactDOM.render(&lt;Person name=&quot;张三&quot; age=&quot;30&quot;/&gt;, app);
+</code></pre><h5 id="this-props-children"><a href="#this-props-children" class="headerlink" title="this.props.children"></a>this.props.children</h5><blockquote>
+<p>在父级组件中导入子组件，我们使用双闭合标签语法，可以在展开的块级区域中创建“子元素”，这些内容都会设定在props.children 上，这样我们就可以在组件中使用这些内容了</p>
+</blockquote>
+<pre><code>class Person extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return &lt;div&gt;
+            我的朋友
+            {
+                React.Children.map(this.props.children, (child)=&gt; {
+                    return child;
+                })
+            }
+        &lt;/div&gt;;
+    }
+}
+ReactDOM.render(&lt;Person&gt;
+    &lt;span&gt;张三&lt;/span&gt;
+    &lt;span&gt;李四&lt;/span&gt;
+    &lt;span&gt;王五&lt;/span&gt;
+&lt;/Person&gt;, app);
+</code></pre><h5 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h5><blockquote>
+<p>组件的状态就像人的心情，会经常变化，而且只能由自己来改变<br>组件一开始有一个初始状态,然后用户互动,导致状态变化，从而触发界面重新渲染<br>可以给按钮绑定事件，当事件发生的时候调用对应的方法改变组件的状态</p>
+</blockquote>
+<pre><code>class Person extends React.Component {
+    constructor(props) {
+        super(props);
+        //-&gt;设置默认的状态信息
+        this.state = {
+            happy: true
+        }
+    }
+
+    fn(e) {
+        //-&gt;重新设置state值
+        this.setState({
+            happy: !this.state.happy
+        });
+    }
+
+    render() {
+        var happyState = this.state.happy ? &apos;good&apos; : &apos;bad&apos;;
+        return &lt;div&gt;
+            today is {happyState} day!
+            &lt;input type=&quot;button&quot; value=&quot;change&quot; onClick={this.fn.bind(this)}/&gt;
+            //-&gt;ES6中的一个坑：一定要重新的bind(this)，这样在方法中的this才代表这个组件，否则代表的是当前点击的这个元素
+        &lt;/div&gt;;
+    }
+}
+ReactDOM.render(&lt;Person/&gt;, app);
+</code></pre><blockquote>
+<p>剪贴板事件 onKeyDown onKeyPress onKeyUp<br>焦点事件 onFocus onBlur<br>键盘事件 onChange onInput onSubmit<br>鼠标事件 onClick onDoubleClick onMouseDown onMouseEnter onMouseLeave</p>
+</blockquote>
+<h5 id="表单元素双向数据绑定"><a href="#表单元素双向数据绑定" class="headerlink" title="表单元素双向数据绑定"></a>表单元素双向数据绑定</h5><pre><code>class Person extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: 0
+        };
+    }
+
+    handleChange(e) {
+        this.setState({
+            value: e.target.value
+        });
+    }
+
+    render() {
+        var value = this.state.value;
+        return &lt;div&gt;
+            &lt;input style={{color: 'red'}} type=&quot;text&quot;
+                   value={value} onChange={this.handleChange.bind(this)}/&gt;
+            &lt;p&gt;{value}&lt;/p&gt;
+        &lt;/div&gt;;
+    }
+}
+ReactDOM.render(&lt;Person/&gt;, app);
+</code></pre><blockquote>
+<p>如果给表单元素设置了value属性，则必须指定onChange事件处理函数，否则 此字段会变成只读状态</p>
+</blockquote>
+<h5 id="复合组件"><a href="#复合组件" class="headerlink" title="复合组件"></a>复合组件</h5><blockquote>
+<p>多个简单的组件嵌套，可构成一个复杂的复合组件，从而完成复杂的交互逻辑</p>
+</blockquote>
+<pre><code>class Panel extends React.Component {
+    render() {
+        return &lt;div className=&quot;panel panel-default&quot;&gt;
+            &lt;PanelHead head={this.props.head}/&gt;
+            &lt;PanelBody body={this.props.body}/&gt;
+        &lt;/div&gt;;
+    }
+}
+class PanelHead extends React.Component {
+    render() {
+        return &lt;div className=&quot;panel-heading&quot;&gt;
+            {this.props.head}
+        &lt;/div&gt;;
+    }
+}
+class PanelBody extends React.Component {
+    render() {
+        return &lt;div className=&quot;panel-body&quot;&gt;
+            {this.props.body}
+        &lt;/div&gt;;
+    }
+}
+ReactDOM.render(&lt;Panel head=&quot;头部&quot; body=&quot;正文&quot;/&gt;, app);
+</code></pre><h5 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h5><blockquote>
+<p>给组件加上ref=”xxx”后，可在父组件中通过this.refs.xxx获取该DOM元素</p>
+</blockquote>
+<pre><code>class Panel extends React.Component {
+    handleClick(e) {
+        this.refs.msg.focus();
+    }
+
+    render() {
+        return &lt;div&gt;
+            &lt;input type=&quot;text&quot; ref=&quot;msg&quot;/&gt;
+            &lt;input type=&quot;button&quot; value=&quot;获得焦点&quot;
+                   onClick={this.handleClick.bind(this)}/&gt;
+        &lt;/div&gt;;
+    }
+}
+ReactDOM.render(&lt;Panel/&gt;, app);
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/04/数据类型检测/" rel="next" title="数据类型检测">
+                <i class="fa fa-chevron-left"></i> 数据类型检测
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/04/内存释放与作用域销毁/" rel="prev" title="内存释放与作用域销毁">
+                内存释放与作用域销毁 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Liu-10004" />
+          <p class="site-author-name" itemprop="name">Liu-10004</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#React"><span class="nav-number">1.</span> <span class="nav-text">React</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、JSX和DOM操作"><span class="nav-number">1.1.</span> <span class="nav-text">1、JSX和DOM操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、React组件"><span class="nav-number">1.2.</span> <span class="nav-text">2、React组件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义组件"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义组件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#组件的属性"><span class="nav-number">1.2.2.</span> <span class="nav-text">组件的属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#this-props-children"><span class="nav-number">1.2.3.</span> <span class="nav-text">this.props.children</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#状态"><span class="nav-number">1.2.4.</span> <span class="nav-text">状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表单元素双向数据绑定"><span class="nav-number">1.2.5.</span> <span class="nav-text">表单元素双向数据绑定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#复合组件"><span class="nav-number">1.2.6.</span> <span class="nav-text">复合组件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM操作"><span class="nav-number">1.2.7.</span> <span class="nav-text">DOM操作</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liu-10004</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
