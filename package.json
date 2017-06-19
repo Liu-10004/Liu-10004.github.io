@@ -1,0 +1,12 @@
+{
+  "name": "personalResume",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "less": "lessc css/index.less css/build.min.css -x"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
